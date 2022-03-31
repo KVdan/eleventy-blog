@@ -1,0 +1,7 @@
+{
+    "extends": [
+        "./node_modules/prettier-stylelint/config.js",
+        "stylelint-config-standard-scss",
+        "stylelint-config-prettier-scss"
+    ]
+}
