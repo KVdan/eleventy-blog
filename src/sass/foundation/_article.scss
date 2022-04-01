@@ -1,37 +1,48 @@
 @use "colors";
 
 article {
-    background: linear-gradient(90deg, #b9deed, #efefef);
-    border: 3px solid colors.$light-grayish-orange;
-    padding: 0 2rem 3rem;
+  background: linear-gradient(
+    90deg,
+    colors.$light-grayish-orange,
+    colors.$light-grayish-yellow,
+    colors.$light-grayish-orange
+  );
+  border: 3px solid colors.$white;
 
-    h2 {
-        background-color: rgb(52 0 52 / 80%);
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: left;
-    }
+  h2 {
+    margin: 0;
+    font-family: "PT Serif", Rockwell, Hahmlet, "Book Antiqua", serif;
+    font-weight: 400;
+    line-height: 50px;
+    color: black;
+    text-align: left;
 
-    article {
-        padding-left: 0;
-        padding-right: 0;
+    // background-color: rgb(52 0 52 / 60%);
+  }
 
-        blockquote {
-            margin-block-start: 0;
-            margin-block-end: 0;
-            margin-inline-start: 0;
-            margin-inline-end: 0;
+  blockquote {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
 
-            p {
-                margin: 0;
-                margin-block-start: 0;
-                margin-block-end: 0;
-                margin-inline-start: 0;
-                margin-inline-end: 0;
-                font-family: Consolas, "Lucida Sans", sans-serif;
-                line-height: 24px;
-            }
-        }
-    }
+  p {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-family: Consolas, "Lucida Sans", sans-serif;
+    line-height: 30px;
+    text-align: left;
+  }
 
-    
+  h3 {
+    font-family: Consolas, "Lucida Sans", sans-serif;
+    font-weight: 200;
+    text-align: center;
+
+    // font-family: "Book Antiqua", Spectral, Hahmlet, serif;
+  }
 }

@@ -16,5 +16,5 @@
     }
   },
   "stylelint.validate": ["css", "less", "postcss", "sass", "scss"],
-  "cSpell.words": ["stylelint"]
+  "cSpell.words": ["Hahmlet", "stylelint"]
 }

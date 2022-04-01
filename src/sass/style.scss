@@ -1,18 +1,26 @@
 @use "foundation/article";
 @use "foundation/colors";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 2rem 4rem 4rem;
-  background-color: colors.$very-light-gray4;
+  background-color: colors.$very-dark-gray;
 
   main {
-    padding: 1rem;
-    text-align: center;
-    background-color: colors.$light-grayish-yellow;
+    // background-color: colors.$light-grayish-yellow;
+
+    p {
+      margin: 0;
+    }
 
     h1 {
-      font-family: Rockwell, "Book Antiqua", serif;
-      color: colors.$very-dark-grayish-blue;
+      margin: 0;
+      font-family: "Nanum Pen Script", cursive;
+      font-weight: 300;
+      color: colors.$very-light-gray1;
     }
   }
 }
