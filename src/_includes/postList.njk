@@ -1,0 +1,14 @@
+<ol reversed class="postList">
+	{% for post in postList | reverse %}
+		<div class="post-item">
+			<a href="{{ post.url }}" class="post-item-link"><h2>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2></a>
+			<time class="post-item-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+			{% if post.templateContent.length > 500 %}
+				{{ post.templateContent.slice(0, 500) | safe }}⋯⋯
+			   <a href="{{ post.url }}" class="post-item-link"><p>继续阅读 :P</p></a>
+			{% else %}
+				{{ post.templateContent | safe }}
+			{% endif %}
+		</div>
+	{% endfor %}
+</ol>

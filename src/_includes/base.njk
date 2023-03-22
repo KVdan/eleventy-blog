@@ -13,15 +13,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Nanum+Pen+Script&family=Odor+Mean+Chey&family=PT+Serif&family=Spectral&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/css-doodle@0.34.4/css-doodle.min.js"></script>
+    <script>
+        document.addEventListener('click', function(e) {
+            e.target.update && e.target.update();  
+        });
+    </script>
 </head>
 
 <body>
-    <main>
-        <h1>{{title}}</h1>
-        <article>
-        {{content | safe}}
-        </article>
-    </main>
+    <header class='site-header'>
+        <div class='css-doodle-wrapper'>
+            <css-doodle>
+                :doodle {
+                @grid: 1x36 / 100vmin;
+                --rotate: @r(0, 360)deg;
+                margin:auto;
+                position: fixed;
+                top: 0;
+                left: calc(50vw - 50vmin);
+                z-index: -2;
+                }
+                @place-cell: center;
+                @size: calc(100% - @calc(@index() - 1) * 2.78%);
+                transform: rotate(calc(@index() * var(--rotate)));
+                border: 3px solid rgba(0,0,0,0.3);
+                background-color: hsla(
+                calc(calc(100 - @index()) * 7.083),
+                calc(@index() * 2.78%),
+                20%,
+                calc(@index() / 48)
+                );
+            </css-doodle>
+        </div> 
+    </header>
+    <div class='site-content'>
+        <div class='wrappers'>
+            <div class='link-list-wrapper'>
+                <h1>Topics</h1>
+                    <div class='topics'>
+                        {% for topic in topics %}
+                            {% set topicUrl %}/topics/{{ topic.name | slugify }}/{% endset %}
+                                <a href="{{ topicUrl }}" class="topic-link"><div class='topic'>{{ topic.title }}</div></a>
+                        {% endfor %}
+                    </div>
+            </div>
+            <div class='para-list-wrapper'>   
+                <h1>Latest</h1>
+                    <div>
+                        {% set postList = collections.post | reverse | head(3) %}
+                        {% include "postList.njk" %}
+                        {# {%- for post in collections.post | reverse | head(3) -%}
+                            <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+                        {%- endfor -%} #}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class='site-footer'>
+        <h1>About</h1>
+        <p>This is a project established and maintained by <a href="https://github.com/KVdan">Cave Dan</a>.</p>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,13 @@
+---
+pagination:
+    data: topics
+    size: 1
+    alias: topic
+    reverse: true
+permalink: /topics/{{ topic.name | slugify }}/
+---
+
+{{ topic.name}} - {{ topic.title }}
+
+{% set postList = collections[topic.name] %}
+{% include "postList.njk" %}
