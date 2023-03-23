@@ -2,7 +2,7 @@
 
 ## Main Feats
 
-- Show the latest 3 posts in the homepage
+- Show the latest 3 posts in the homepage (you can change the pattern of background image by clicking)
 <img width="1120" alt="b10428c2046e45cb35129a448b70106" src="https://user-images.githubusercontent.com/57557504/227171644-201b4896-c803-49e6-8a4d-398e24df06e2.png">
 
 - Show the single post
