@@ -9,7 +9,7 @@
     font-family: Rockwell, Hahmlet, "Book Antiqua", serif;
     font-weight: 400;
     line-height: 50px;
-    color: rgb(73 73 127 / calc(0.5 + math.random(1) / 2)); // 鼠标悬停显示字体
+    color: rgb(73 73 127 / calc(0.5 + math.random(1) / 2));
     text-align: left;
   }
 
@@ -22,41 +22,27 @@
   }
 
   article {
-    padding-top: 80px;
+    margin-top: 80px;
 
     blockquote {
       margin-block-start: 0;
-      margin-block-end: 0;
+      margin-block-end: 0.8rem;
       margin-inline-start: 0;
       margin-inline-end: 0;
     }
 
     p {
       margin: 0;
-      margin-block-start: 0;
-      margin-block-end: 0;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      margin-bottom: 0.8rem;
-      font-family: Consolas, "Lucida Sans", sans-serif;
       line-height: 30px;
-      color: colors.$spinning-green;
+      color: colors.$spinning-green; // post字体颜色草绿
       text-align: left;
-      transition: color 500ms ease-in 100ms;
+      transition: color 500ms ease-in 100ms; // post字体颜色切换动态效果采用ease-in方式
     }
 
     p:hover {
       color: rgb(
         73 73 127 / calc(0.5 + math.random(1) / 2)
-      ); // 鼠标悬停显示字体
-    }
-
-    h3 {
-      font-family: Consolas, "Lucida Sans", sans-serif;
-      font-weight: 200;
-      text-align: center;
-
-      // font-family: "Book Antiqua", Spectral, Hahmlet, serif;
+      ); // 鼠标悬停字体颜色
     }
   }
 }

@@ -1,4 +1,4 @@
-@use "foundation/article";
+@use "foundation/blogPost";
 @use "foundation/colors";
 
 * {
@@ -28,11 +28,23 @@ body {
     color: colors.$milky;
   }
 
+  h3 {
+    font-family: Consolas, "Lucida Sans", sans-serif;
+    font-weight: 200;
+    text-align: center;
+
+    // font-family: "Book Antiqua", Spectral, Hahmlet, serif;
+  }
+
+  p {
+    font-family: Consolas, "Lucida Sans", sans-serif;
+  }
+
   .site-content {
     height: 100vh;
     margin-top: 60vh;
 
-    // 背景
+    // 主页正文背景
     background-color: rgba(28 36 10 / 40%);
 
     p {
@@ -40,6 +52,7 @@ body {
     }
 
     .wrappers {
+      // 左右结构
       display: flex;
       height: 100%;
 
@@ -51,11 +64,19 @@ body {
 
         .topics {
           padding-top: 100px;
-          padding-left: 60px;
+
+          a {
+            text-decoration: none;
+          }
 
           .topic {
             width: 100px;
             height: 100px;
+            margin: auto;
+            margin-bottom: 1rem;
+            line-height: 100px;
+            text-align: center;
+            background-color: rgba(0 0 0 / 60%);
           }
         }
       }
@@ -75,7 +96,7 @@ body {
     padding-top: 40px;
     text-align: center;
 
-    // 背景
+    // 主页页脚背景
     background-color: rgba(0 0 0 / 40%);
 
     p {
