@@ -14,6 +14,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   return {
+    pathPrefix: "/",
+    HTMLTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "public",
