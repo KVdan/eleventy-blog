@@ -33,7 +33,7 @@ body {
     .toHome.on-homepage {
       height: 60vh;
       margin-bottom: 0;
-      font-family: "Kaushan Script", cursive;
+      font-family: "Nanum Pen Script", cursive;
       font-size: 48px;
       line-height: 60vh;
       color: colors.$milky;
@@ -101,6 +101,7 @@ body {
         background-color: rgba(0 0 0 / 60%);
 
         .main-title {
+          margin-right: 60px;
           text-align: right;
         }
 

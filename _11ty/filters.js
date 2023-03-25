@@ -14,10 +14,6 @@ module.exports = {
     );
   },
 
-  hasTopics: (tags, topics) => {
-    return topics.filter((topic) => tags?.includes(topic.name));
-  },
-
   dayDate: (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d");
   },
