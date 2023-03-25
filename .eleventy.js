@@ -9,14 +9,14 @@ module.exports = function (eleventyConfig) {
 
   // Watch CSS files for changes
   eleventyConfig.setBrowserSyncConfig({
-    files: "./public/css/**/*.css",
+    files: "./_site/css/**/*.css",
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   return {
     dir: {
       input: "src",
-      output: "public",
+      output: "_site",
       includes: "_includes",
       data: "_data",
     },
