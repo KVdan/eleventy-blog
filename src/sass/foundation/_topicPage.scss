@@ -1,0 +1,34 @@
+/* stylelint-disable selector-class-pattern */
+@use "colors";
+@use "mixins";
+
+.topic-page {
+  height: 100vh;
+  padding: 80px;
+  background-color: colors.$milky;
+
+  .sub-title {
+    font-family: Macondo, cursive;
+    font-size: 18px;
+    color: black;
+
+    &.post-title {
+      text-decoration: underline;
+    }
+
+    &.topic-title {
+      padding-bottom: 0.8rem;
+      margin-bottom: 2rem;
+      font-family: Bitter, serif;
+      font-size: 24px;
+      border-bottom: 2px solid black;
+    }
+  }
+
+  .toHome.title {
+    width: fit-content;
+    margin-top: 36px;
+    color: black;
+    border-bottom: 2px solid black;
+  }
+}

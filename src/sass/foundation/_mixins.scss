@@ -1,0 +1,41 @@
+@use "sass:math";
+@use "colors";
+
+@mixin paragraph-text {
+  font-family: Consolas, "Lucida Sans", sans-serif;
+  font-size: 16px;
+}
+
+@mixin cursive-title {
+  font-family: "Nanum Pen Script", cursive;
+  color: colors.$milky;
+}
+
+@mixin post-title {
+  font-family: Rockwell, Hahmlet, "Book Antiqua", serif;
+  font-weight: 400;
+  line-height: 50px;
+  color: rgb(73 73 127 / calc(0.5 + math.random(1) / 2));
+  text-align: left;
+}
+
+@mixin main-title {
+  margin: 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: 32px;
+  font-weight: 500;
+  color: colors.$milky;
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+
+@mixin sub-title {
+  font-size: 28px;
+  font-weight: 300;
+  @include cursive-title;
+}
+
+// font-family: 'Bitter', serif;
+// font-family: 'Exo', sans-serif;
+// font-family: 'Kaushan Script', cursive;
+// font-family: 'Macondo', cursive;

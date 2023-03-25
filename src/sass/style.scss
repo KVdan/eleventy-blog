@@ -1,54 +1,55 @@
 @use "foundation/blogPost";
 @use "foundation/colors";
+@use "foundation/mixins";
+@use "foundation/linkEffect";
+@use "foundation/topicPage";
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   background-color: rgb(0 0 0 / 30%);
 
   a:any-link {
     color: colors.$milky;
   }
 
-  h1 {
-    margin: 0;
-    font-family: "Nanum Pen Script", cursive;
-    font-weight: 300;
-    color: colors.$milky;
-    text-align: center;
+  .main-title {
+    @include mixins.main-title;
   }
 
-  h2,
-  time {
-    font-family: "Nanum Pen Script", cursive;
-    font-size: 20px;
-    font-weight: 300;
-    color: colors.$milky;
-  }
-
-  h3 {
-    font-family: Consolas, "Lucida Sans", sans-serif;
-    font-weight: 200;
-    text-align: center;
-
-    // font-family: "Book Antiqua", Spectral, Hahmlet, serif;
+  .sub-title {
+    @include mixins.sub-title;
   }
 
   p {
-    font-family: Consolas, "Lucida Sans", sans-serif;
+    @include mixins.paragraph-text;
+  }
+
+  .site-header {
+    /* stylelint-disable-next-line selector-class-pattern */
+    .toHome.on-homepage {
+      height: 60vh;
+      margin-bottom: 0;
+      font-family: "Kaushan Script", cursive;
+      font-size: 48px;
+      line-height: 60vh;
+      color: colors.$milky;
+      text-align: center;
+      letter-spacing: 0.5rem;
+    }
   }
 
   .site-content {
-    height: 100vh;
-    margin-top: 60vh;
+    height: 120vh;
 
     // 主页正文背景
     background-color: rgba(28 36 10 / 40%);
 
     p {
-      color: rgb(175 143 218);
+      color: colors.$light-purple;
     }
 
     .wrappers {
@@ -58,9 +59,9 @@ body {
 
       .link-list-wrapper {
         display: block;
-        width: 20%;
-        min-width: 200px;
-        padding-top: 40px;
+        width: 30%;
+        min-width: 250px;
+        padding-top: 80px;
 
         .topics {
           padding-top: 100px;
@@ -72,21 +73,57 @@ body {
           .topic {
             width: 100px;
             height: 100px;
+            padding-top: 8px;
+            padding-left: 10px;
             margin: auto;
             margin-bottom: 1rem;
-            line-height: 100px;
+            font-size: 18px;
+            line-height: 40px;
             text-align: center;
-            background-color: rgba(0 0 0 / 60%);
+            letter-spacing: 0.8rem;
+            border: 3px solid rgba(0 0 0 / 20%);
+            transition: ease-out 0.4s;
+
+            // background-color: rgba(0 0 0 / 60%);
+
+            &:hover {
+              box-shadow: inset 100px 100px 0 0 rgba(0 0 0 / 20%);
+            }
           }
         }
       }
 
       .para-list-wrapper {
         display: block;
-        padding-top: 40px;
-        padding-right: 50px;
-        padding-left: 50px;
+        padding-top: 80px;
+        padding-right: 80px;
+        padding-left: 80px;
         background-color: rgba(0 0 0 / 60%);
+
+        .main-title {
+          text-align: right;
+        }
+
+        /* stylelint-disable-next-line selector-class-pattern */
+        .postList {
+          padding-top: 60px;
+          margin: auto;
+
+          .post-item {
+            margin-bottom: 40px;
+
+            .post-item-date {
+              font-size: 20px;
+              color: colors.$very-dark-desaturate-yellow;
+            }
+
+            a.post-item-link {
+              width: fit-content;
+
+              @include linkEffect.link-with-effect;
+            }
+          }
+        }
       }
     }
   }
@@ -99,8 +136,14 @@ body {
     // 主页页脚背景
     background-color: rgba(0 0 0 / 40%);
 
-    p {
-      color: rgb(228 217 242);
+    .para-text {
+      margin-top: 2rem;
+      color: colors.$milky;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a {
+      color: colors.$pink;
     }
   }
 }

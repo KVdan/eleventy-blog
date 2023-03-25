@@ -37,11 +37,27 @@
         </css-doodle>
         </div>
         <div class='blog-post'>
-            <h2 class='sub-title'>{{title}}</h2>
+            <div class='links'>
+            <a href='/content' data-replace="Dan`s Cave"><div class='toHome title'>Back to Cave ←</div></a>
+            {# {% for tag in tags | hasTopics(topics) %}
+                <div class="topic-item">
+                    <a href="/topics/{{ tag.name }}"><div class='title' >{{ tag.title }}</div></a>
+                </div>
+            {% endfor %} #}
+             {% for tag in tags %}
+                <div class="topic-item">
+                    {% if  metadata.topicDict[tag] %}
+                    <a href="/topics/{{ tag }}" data-replaces={{ metadata.topicDict[tag] }}><div class='toTopic title' >{{ metadata.topicDict[tag] }} →</div></a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+            <h2 class='post-title'>{{title}}</h2>
             <p class='date'>{{date}}</p>
-            <article>
+
+            <div class='post-content'>
             {{content | safe}}
-            </article>
+            </div>
         </div>
     </main>
 </body>

@@ -19,6 +19,7 @@
             e.target.update && e.target.update();  
         });
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Exo&family=Kaushan+Script&family=Macondo&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -46,11 +47,13 @@
                 );
             </css-doodle>
         </div> 
+        <a href='/content'><div class='on-homepage toHome'>Dan`s Cave</div></a>
     </header>
+
     <div class='site-content'>
         <div class='wrappers'>
             <div class='link-list-wrapper'>
-                <h1>Topics</h1>
+                <div class='main-title'>Topics</div>
                     <div class='topics'>
                         {% for topic in topics %}
                             {% set topicUrl %}/topics/{{ topic.name | slugify }}/{% endset %}
@@ -59,9 +62,9 @@
                     </div>
             </div>
             <div class='para-list-wrapper'>   
-                <h1>Latest</h1>
+                <div class='main-title latest'>Latest</div>
                     <div>
-                        {% set postList = collections.post | reverse | head(3) %}
+                        {% set postList = collections.post | reverse | head(3)  %}
                         {% include "postList.njk" %}
                         {# {%- for post in collections.post | reverse | head(3) -%}
                             <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
@@ -72,8 +75,8 @@
         </div>
     </div>
     <footer class='site-footer'>
-        <h1>About</h1>
-        <p>This is a project established and maintained by <a href="https://github.com/KVdan">Cave Dan</a>.</p>
+        <div class='main-title'>About</div>
+        <div class='para-text'>This is a project established and maintained by <a href="https://github.com/KVdan">Cave Dan【山顶洞丹】</a> with 💓.</div>
     </footer>
 </body>
 

@@ -1,27 +1,46 @@
-@use "colors";
+/* stylelint-disable selector-class-pattern */
 @use "sass:math";
+@use "colors";
+@use "mixins";
+@use "linkEffect";
 
 .blog-post {
-  padding: 120px;
+  max-width: 60rem;
+  padding-top: 100px;
+  margin: auto;
 
-  h2 {
-    margin: 0;
-    font-family: Rockwell, Hahmlet, "Book Antiqua", serif;
-    font-weight: 400;
-    line-height: 50px;
-    color: rgb(73 73 127 / calc(0.5 + math.random(1) / 2));
-    text-align: left;
+  .links {
+    position: fixed;
+    top: 36vh;
+    left: 70px;
+
+    .toHome,
+    .toTopic {
+      margin-bottom: 1.2rem;
+      font-size: 18px;
+    }
+
+    .toHome {
+      font-family: Exo, sans-serif;
+      font-size: 18px;
+      color: colors.$milky;
+    }
   }
 
-  p.date {
+  .post-title {
+    @include mixins.post-title;
+  }
+
+  .date {
     margin: 0;
-    font-family: Consolas, "Lucida Sans", sans-serif;
     line-height: 30px;
+    @include mixins.paragraph-text;
+
     color: colors.$milky;
     text-align: left;
   }
 
-  article {
+  .post-content {
     margin-top: 80px;
 
     blockquote {
@@ -32,6 +51,8 @@
     }
 
     p {
+      @include mixins.paragraph-text;
+
       margin: 0;
       line-height: 30px;
       color: colors.$spinning-green; // post字体颜色草绿
