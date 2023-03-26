@@ -115,6 +115,8 @@ body {
 
             .post-item-date {
               font-size: 20px;
+              @include mixins.cursive-title;
+
               color: colors.$very-dark-desaturate-yellow;
             }
 

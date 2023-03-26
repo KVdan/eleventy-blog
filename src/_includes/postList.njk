@@ -3,8 +3,8 @@
 		<div class="post-item">
 			<a href="{{ post.url }}" class="post-item-link" data-replace="继续阅读 :P"><div class='sub-title post-title' >{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</div></a>
 			<div class="sub-title post-item-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</div>
-			{% if post.templateContent.length > 500 %}
-				{{ post.templateContent.slice(0, 500) | safe }}⋯⋯
+			{% if post.templateContent.length > 250 %}
+				{{ post.templateContent.slice(0, 250) | safe }}⋯⋯
 			   {# <a href="{{ post.url }}" class="post-item-link"><div class='para-text read-more'>继续阅读 :P</div></a> #}
 			{% else %}
 				{{ post.templateContent | safe }}
